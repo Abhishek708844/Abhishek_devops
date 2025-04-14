@@ -41,3 +41,46 @@ diff
 
 
 # LAB-2 GIT COMMANDS
+# 1. Simulating Team Collaboration (Branching and Feature Development) 
+
+🟡  Create feature-user1 and edit
+
+git checkout -b feature-user1
+echo "User1: Added feature A" >> project.txt
+
+🟡 Commit changes
+
+git add project.txt
+git commit -m "User1: Added feature A"
+
+[feature-user1 1a2b3c4] User1: Added feature A
+ 1 file changed, 1 insertion(+)
+ 
+🟡 Push branch
+
+git push origin feature-user1
+
+![Screenshot 2025-04-14 221102](https://github.com/user-attachments/assets/5787d901-c596-4d2a-8e2d-990e2afb20a9)
+
+![Screenshot 2025-04-14 221032](https://github.com/user-attachments/assets/3e29f2c4-bcd2-4c76-9497-6570e0b330bc)
+
+
+🟡  Switch to main and create feature-user2
+
+git checkout main
+git checkout -b feature-user2
+echo "User2: Added feature B" >> project.txt
+
+🟡Commit and push
+
+git add project.txt
+git commit -m "User2: Added feature B"
+git push origin feature-user2
+
+![Screenshot 2025-04-14 221755](https://github.com/user-attachments/assets/2f0db0b3-7328-4072-a58d-0989a16429aa)
+
+
+ # 2. Merge Conflict Simulation and Resolution
+
+
+
