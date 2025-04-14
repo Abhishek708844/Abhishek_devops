@@ -164,7 +164,7 @@ git push origin feature-rebase --force
 ![f8](https://github.com/user-attachments/assets/55d6943c-2ac4-4120-a131-70996035e71c)
 
 
-4. Undoing Changes with Git Revert
+# 4. Undoing Changes with Git Revert
 🟠 Step 5.1: View commit history
 git log --oneline
 O/P:
