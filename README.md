@@ -38,3 +38,6 @@ Viewing Code Differences To examine the changes you made before committing, use:
 
 git diff
 diff
+
+
+# LAB-2 GIT COMMANDS
