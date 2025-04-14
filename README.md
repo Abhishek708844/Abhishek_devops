@@ -140,5 +140,27 @@ git push origin main
 
 ![f7](https://github.com/user-attachments/assets/6214bbf1-e877-4aa9-9b6c-77d5cbaccc29)
 
+ # 3. Git Rebase Practice
+🔵 Step 4.1: Create feature-rebase and modify
+git checkout -b feature-rebase
+echo "Rebase feature: New logic" >> project.txt
+
+🔵 Step 4.2: Commit the changes
+git add project.txt
+git commit -m "Rebase feature: Added new logic"
+
+🔵 Step 4.3: Rebase onto main
+git rebase main
+O/P:
+Successfully rebased and updated refs/heads/feature-rebase.
+
+🔵 Step 4.4: Push to GitHub
+git push origin feature-rebase
+Or if already pushed and rebasing again:
+
+git push origin feature-rebase --force
+
+
+![f8](https://github.com/user-attachments/assets/55d6943c-2ac4-4120-a131-70996035e71c)
 
 
