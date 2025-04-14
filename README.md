@@ -83,4 +83,62 @@ git push origin feature-user2
  # 2. Merge Conflict Simulation and Resolution
 
 
+🔴 Step 1: Switch to main and merge branch1
+
+git checkout main
+git merge branch1
+✅ O/P (Expected):
+Updating abc1234..1a2b3c4
+Fast-forward
+ project.txt | 1 +
+✅ This will succeed if branch1 does not conflict with main.
+
+🔴 Step 2: Push merged main
+
+ git push origin main
+
+🔴 Step 3: Merge branch2 (creates a conflict)
+
+git merge branch2
+⚠️ O/P (Expected Conflict):
+Auto-merging project.txt
+CONFLICT (content): Merge conflict in project.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+🔴 Step 4: Resolve conflict
+Edit the file project.txt, and change:
+
+text
+Copy code
+<<<<<<< HEAD
+User1: Added feature A
+=======
+User2: Added feature B
+>>>>>>> branch2
+To this (keeping both):
+
+text
+Copy code
+User1: Added feature A
+User2: Added feature B
+
+🔴 Step 5: Stage, commit & push
+
+git add project.txt
+git commit -m "Resolved merge conflict between branch1 and branch2"
+git push origin main
+✅ Now your main branch has both changes from branch1 and branch2, and the merge conflict is cleanly resolved.
+
+
+
+![f4](https://github.com/user-attachments/assets/b0a24b71-242d-44e3-b9db-41642aff39f4)
+
+![f5](https://github.com/user-attachments/assets/52c56c64-bf1d-4870-9821-49bbeb8c7c61)
+
+![f6](https://github.com/user-attachments/assets/99a1d8db-fb2d-4db7-b1eb-ecf53fae14fa)
+
+
+![f7](https://github.com/user-attachments/assets/6214bbf1-e877-4aa9-9b6c-77d5cbaccc29)
+
+
 
