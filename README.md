@@ -1,6 +1,6 @@
 # Abhishek_devops
-DevOps-LABFILE
-LAB-1 GIT COMMANDS
+# DevOps-LABFILE
+# LAB-1 GIT COMMANDS
 This repository contains the practical lab files and exercises related to DevOps, including Git operations and version control demonstrations.
 
 Cloning the Repository To begin, clone this repository using the following command:
