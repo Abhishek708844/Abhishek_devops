@@ -164,3 +164,25 @@ git push origin feature-rebase --force
 ![f8](https://github.com/user-attachments/assets/55d6943c-2ac4-4120-a131-70996035e71c)
 
 
+4. Undoing Changes with Git Revert
+🟠 Step 5.1: View commit history
+git log --oneline
+O/P:
+9f9e111 (HEAD -> main) Resolved merge conflict...
+3c3b111 User2: Added feature B
+1a2b3c4 User1: Added feature A
+abc1234 Initial commit
+
+
+🟠 Step 5.2: Revert the last commit
+git revert 9f9e111
+O/P:
+[main 1f1f1f1] Revert "Resolved merge conflict..."
+
+🟠 Step 5.3: Push the revert
+git push origin main
+
+![f9](https://github.com/user-attachments/assets/f4a2536e-4be2-467f-adec-314e2ad3633f)
+
+
+
