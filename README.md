@@ -200,9 +200,13 @@ CREATE THREE REPO IN GITHUB AND CLONE IT TO YOUR PC REPO1:MAIN-add index.html fi
 open integrated terminal of MAIN repo
 
 git submodule add https://github.com/SAGAR-SINGH-X-CUBE/JS.git css
+
 git submodule add https://github.com/SAGAR-SINGH-X-CUBE/CSS.git css
+
 git add .
+
 git commit -m "submodule added"
+
 git push
 
 
