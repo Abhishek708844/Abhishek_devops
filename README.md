@@ -212,5 +212,17 @@ git push
 ![F13](https://github.com/user-attachments/assets/d1b8c3b2-38a7-4dc4-b0ac-03ba9a6c4457)
 
 
+#Hosting Submodule 
+Go to that repo containing files to run website then
+Click on "Settings" → "Pages" Under "Branch," select main. Click "Save."
+
+link:
+![Screenshot 2025-04-15 130534](https://github.com/user-attachments/assets/87471101-103d-4d41-bd38-d1d99e1c2199)
+
+
+![Screenshot 2025-04-15 125505](https://github.com/user-attachments/assets/362f3cef-f0f6-4313-99a8-7dc0e9d4aaf4)
+
+
+
 
 
