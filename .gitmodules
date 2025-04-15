@@ -1,0 +1,9 @@
+[submodule "Abhishek_Devops-JS"]
+	path = Abhishek_Devops-JS
+	url = https://github.com/Abhishek708844/Abhishek_Devops-JS.git
+[submodule "Abhishek_Devops-CSS"]
+	path = Abhishek_Devops-CSS
+	url = https://github.com/Abhishek708844/Abhishek_Devops-CSS.git
+[submodule "Abhishek_Devops-MAIN"]
+	path = Abhishek_Devops-MAIN
+	url = https://github.com/Abhishek708844/Abhishek_Devops-MAIN.git
