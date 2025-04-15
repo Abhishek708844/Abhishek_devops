@@ -189,6 +189,9 @@ git push origin main
 
 CREATE THREE REPO IN GITHUB AND CLONE IT TO YOUR PC REPO1:MAIN-add index.html file->add->commit->push REPO2:CSS-add style.css file->add->commit->push REPO3:JS-add script.js file->add->commit->push
 
+![F12](https://github.com/user-attachments/assets/60db4f5a-35f4-476b-8124-9bf41495e6f7)
+
+
 ![F10](https://github.com/user-attachments/assets/ba3e3f65-7d30-41e9-bbb0-92ce7908d6d5)
 
 ![F11](https://github.com/user-attachments/assets/3eb0c2cd-36d1-4d6c-8a10-9ab922a564a2)
