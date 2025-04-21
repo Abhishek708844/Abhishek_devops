@@ -253,14 +253,14 @@ app = FastAPI(title="DevOps Experiment API")
 
 async def root():
 
-    return {"message": "Welcome to DevOps Experiment API"}
+   return {"message": "Welcome to DevOps Experiment API"}
     
 
 @app.get("/health", response_model=MessageResponse)
 
 async def health_check():
 
-    return {"message": "API is healthy"}
+   return {"message": "API is healthy"}
     
     
 #schemas.py:
@@ -273,7 +273,7 @@ from pydantic import BaseModel
 
 class MessageResponse(BaseModel):
 
-    message: str
+   message: str
     
 #requirements.txt:
 
@@ -325,13 +325,27 @@ json
 
 ![D5](https://github.com/user-attachments/assets/0e33e789-a4a1-4af9-a9b1-80aeccb320de)
 
+
+
+
+
 ![D5 (2)](https://github.com/user-attachments/assets/942fec14-1245-4484-bb6f-e8f4f8a62932)
+
+
+
+
 
 
 ![D5 (3)](https://github.com/user-attachments/assets/f5b100cf-ea50-4658-add2-ea9709fd1043)
 
+
+
+
 #Using browser  http://localhost/health
 ![D5 (4)](https://github.com/user-attachments/assets/35c41594-b30c-4d39-8d0b-4996cd3ef23c)
+
+
+
 
 #Using FastAPI's automatic docs    http://localhost/docs
 ![D5 (5)](https://github.com/user-attachments/assets/5777f5e9-c8e2-4307-a747-08e10d0a61cb)
