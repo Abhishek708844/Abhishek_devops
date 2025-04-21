@@ -223,9 +223,9 @@ link:
 ![Screenshot 2025-04-15 125505](https://github.com/user-attachments/assets/362f3cef-f0f6-4313-99a8-7dc0e9d4aaf4)
 
 
-#DevOps Experiment 5: FastAPI Dockerization
-Experiment 5: FastAPI Application Development and Dockerization
-Detailed Implementation
+# DevOps Experiment 5: FastAPI Dockerization
+# Experiment 5: FastAPI Application Development and Dockerization
+
 1. FastAPI Application Setup
 
 Created a basic FastAPI application with the following structure:
@@ -242,25 +242,39 @@ fastapi-app/
 
 python
 from fastapi import FastAPI
+
 from .schemas import MessageResponse
+
 
 app = FastAPI(title="DevOps Experiment API")
 
+
 @app.get("/", response_model=MessageResponse)
+
 async def root():
+
     return {"message": "Welcome to DevOps Experiment API"}
+    
 
 @app.get("/health", response_model=MessageResponse)
+
 async def health_check():
+
     return {"message": "API is healthy"}
+    
     
 #schemas.py:
 
+
 python
+
 from pydantic import BaseModel
 
+
 class MessageResponse(BaseModel):
+
     message: str
+    
 #requirements.txt:
 
 fastapi==0.95.2
