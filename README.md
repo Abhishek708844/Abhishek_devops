@@ -366,6 +366,136 @@ docker PS
 docker logs fastapi-app
 
 
+# Experiment 6: Automation Using GitHub Actions
+
+# 1. Project Setup
+Ensure you have:
+
+A GitHub repository for your FastAPI app (fastapi-app)
+
+Dockerfile (from Experiment 5)
+
+GitHub account with Docker Hub credentials (for pushing images)
+
+# 2. Create GitHub Actions Workflow
+File Structure
+fastapi-app/
+├── .github/
+│   └── workflows/
+│       └── docker-build.yml  # GitHub Actions workflow
+├── app/
+│   └── ... (FastAPI code)
+├── Dockerfile
+└── requirements.txt
+Workflow File (.github/workflows/docker-build.yml)
+yaml
+name: Docker Build and Push
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  IMAGE_NAME: fastapi-devops
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: ${{ github.ref == 'refs/heads/main' }}
+          tags: |
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+  test:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run API tests
+        run: |
+          docker run -d -p 8000:80 --name test-api ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          sleep 5  # Wait for API to start
+          curl -s http://localhost:8000/ | grep -q "Welcome to DevOps"
+          curl -s http://localhost:8000/health | grep -q "API is healthy"
+          
+# 3. Configure GitHub Secrets
+Go to Repository Settings → Secrets → Actions.
+
+Add:
+
+DOCKER_HUB_USERNAME → Your Docker Hub username
+
+DOCKER_HUB_TOKEN → Docker Hub access token (Create one here)
+
+# 4. Push to GitHub & Trigger Workflow
+bash
+git add .
+git commit -m "Add GitHub Actions workflow"
+git push origin main
+
+# 5. Monitor Workflow Execution
+Go to GitHub → Actions tab.
+
+Check the Docker Build and Push workflow.
+
+Verify:
+
+✅ Docker image is built.
+
+✅ Tests pass.
+
+✅ Image pushed to Docker Hub (on main branch push).
+
+# 6. Expected Output
+Successful Workflow Run:
+
+✓ Docker image built: username/fastapi-devops:latest
+✓ API tests passed
+
+![D6 (2)](https://github.com/user-attachments/assets/a155ab35-e34b-445b-965e-1fe17c480ff5)
+
+
+
+
+
+
+![D6](https://github.com/user-attachments/assets/9beb45be-7aab-403f-92fe-bd308a93c2b7)
+
+
+# Docker Hub:
+
+https://hub.docker.com/r/username/fastapi-devops
+
+
+
+# Final Step: Deploy!
+Now you can deploy your FastAPI app anywhere (AWS, Azure, etc.) using:
+
+bash
+docker run -d -p 80:80 username/fastapi-devops:latest
+
+
 
 
 
