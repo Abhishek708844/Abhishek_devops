@@ -223,6 +223,106 @@ link:
 ![Screenshot 2025-04-15 125505](https://github.com/user-attachments/assets/362f3cef-f0f6-4313-99a8-7dc0e9d4aaf4)
 
 
+#DevOps Experiment 5: FastAPI Dockerization
+Experiment 5: FastAPI Application Development and Dockerization
+Detailed Implementation
+1. FastAPI Application Setup
+
+Created a basic FastAPI application with the following structure:
+
+fastapi-app/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── models.py
+│   └── schemas.py
+├── requirements.txt
+└── Dockerfile
+#main.py:
+
+python
+from fastapi import FastAPI
+from .schemas import MessageResponse
+
+app = FastAPI(title="DevOps Experiment API")
+
+@app.get("/", response_model=MessageResponse)
+async def root():
+    return {"message": "Welcome to DevOps Experiment API"}
+
+@app.get("/health", response_model=MessageResponse)
+async def health_check():
+    return {"message": "API is healthy"}
+    
+#schemas.py:
+
+python
+from pydantic import BaseModel
+
+class MessageResponse(BaseModel):
+    message: str
+#requirements.txt:
+
+fastapi==0.95.2
+uvicorn==0.22.0
+
+2. Dockerization
+Created a Dockerfile with multi-stage build for optimization:
+
+#dockerfile
+# Build stage
+FROM python:3.9-slim as builder
+
+WORKDIR /app
+COPY requirements.txt .
+
+RUN pip install --user -r requirements.txt
+
+# Runtime stage
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY --from=builder /root/.local /root/.local
+COPY ./app ./app
+
+ENV PATH=/root/.local/bin:$PATH
+ENV PYTHONPATH=/app
+
+EXPOSE 80
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+
+3. Building and Running the Container
+# Build the image
+docker build -t fastapi-devops .
+
+# Run the container
+docker run -d -p 80:80 --name fastapi-app fastapi-devops
+Verification:
+
+Accessed http://localhost/ and http://localhost/health in browser
+
+Verified responses:
+
+json
+{"message":"Welcome to DevOps Experiment API"}
+json
+{"message":"API is healthy"}
+
+![D5](https://github.com/user-attachments/assets/0e33e789-a4a1-4af9-a9b1-80aeccb320de)
+
+![D5 (2)](https://github.com/user-attachments/assets/942fec14-1245-4484-bb6f-e8f4f8a62932)
+
+
+![D5 (3)](https://github.com/user-attachments/assets/f5b100cf-ea50-4658-add2-ea9709fd1043)
+
+#Using browser  http://localhost/health
+![D5 (4)](https://github.com/user-attachments/assets/35c41594-b30c-4d39-8d0b-4996cd3ef23c)
+
+#Using FastAPI's automatic docs    http://localhost/docs
+![D5 (5)](https://github.com/user-attachments/assets/5777f5e9-c8e2-4307-a747-08e10d0a61cb)
+
+
 
 
 
