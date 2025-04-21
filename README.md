@@ -212,7 +212,7 @@ git push
 ![F13](https://github.com/user-attachments/assets/d1b8c3b2-38a7-4dc4-b0ac-03ba9a6c4457)
 
 
-#Hosting Submodule 
+# Hosting Submodule 
 Go to that repo containing files to run website then
 Click on "Settings" → "Pages" Under "Branch," select main. Click "Save."
 
@@ -341,13 +341,13 @@ json
 
 
 
-#Using browser  http://localhost/health
+# Using browser  http://localhost/health
 ![D5 (4)](https://github.com/user-attachments/assets/35c41594-b30c-4d39-8d0b-4996cd3ef23c)
 
 
 
 
-#Using FastAPI's automatic docs    http://localhost/docs
+# Using FastAPI's automatic docs    http://localhost/docs
 ![D5 (5)](https://github.com/user-attachments/assets/5777f5e9-c8e2-4307-a747-08e10d0a61cb)
 
 
