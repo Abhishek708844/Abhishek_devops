@@ -350,6 +350,21 @@ json
 # Using FastAPI's automatic docs    http://localhost/docs
 ![D5 (5)](https://github.com/user-attachments/assets/5777f5e9-c8e2-4307-a747-08e10d0a61cb)
 
+#NOTE
+# Stop and remove the container (when done)
+bash
+docker stop fastapi-app
+docker rm fastapi-app
+Additional Verification
+
+# You can verify the container is running with:
+docker PS
+
+
+
+# Check logs with:
+docker logs fastapi-app
+
 
 
 
