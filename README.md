@@ -497,5 +497,24 @@ docker run -d -p 80:80 username/fastapi-devops:latest
 
 
 
+![Screenshot 2025-04-29 121645](https://github.com/user-attachments/assets/22f7e8d3-7527-44ed-92f6-c62497be62b1)
+
+![Screenshot 2025-04-29 121645](https://github.com/user-attachments/assets/82d24474-cf08-46de-9681-d801cf1e0f50)
+
+![Screenshot 2025-04-29 121659](https://github.com/user-attachments/assets/3b6875e9-1a28-4be3-be8f-96e10387a1d2)
+
+![Screenshot 2025-04-29 121713](https://github.com/user-attachments/assets/9b3cd786-3bd0-4ec7-9586-02f26a45c82a)
+
+![Screenshot 2025-04-29 121756](https://github.com/user-attachments/assets/345a2ea1-382b-4574-9868-879ccecd42cf)
+
+![Screenshot 2025-04-29 121818](https://github.com/user-attachments/assets/ad35bc6a-1e3d-4d96-9326-d25c9985967d)
+
+![Screenshot 2025-04-29 121835](https://github.com/user-attachments/assets/7ecc1d40-3ef9-4f0f-b271-9dccaf8ad036)
+
+
+
+
+
+
 
 
